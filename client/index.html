@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TaskBot AI</title>
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <header class="app-header">
+        <span class="badge">TASKBOT AI</span>
+        <h1>Assistente de Tarefas</h1>
+      </header>
+
+      <main class="app-main">
+        <section class="chat-panel" aria-label="Chat">
+          <div class="messages" id="messages" role="log" aria-live="polite">
+            <div class="message message--bot">
+              <div class="bubble">Olá! Sou o TaskBot AI. Estou aqui para te ajudar a organizar e gerir as tarefas do teu dia a dia. Posso criar, atualizar, etiquetar, resumir ou apagar tarefas.</div>
+            </div>
+          </div>
+
+          <form class="composer" id="composer" autocomplete="off">
+            <input
+              type="text"
+              id="input"
+              placeholder="Escreve uma mensagem..."
+              aria-label="Mensagem"
+            />
+            <button type="submit" id="send" aria-label="Enviar">Enviar</button>
+          </form>
+        </section>
+
+        <aside class="tasks-panel" aria-label="Tarefas">
+          <div class="tasks-header">
+            <h2>Tarefas</h2>
+            <button id="refresh-tasks" class="ghost-btn" title="Atualizar">
+              ↻
+            </button>
+          </div>
+
+          <div class="filters">
+            <select id="filter-priority" aria-label="Filtrar por prioridade">
+              <option value="">Todas as prioridades</option>
+              <option value="URGENT">URGENT</option>
+              <option value="HIGH">HIGH</option>
+              <option value="MEDIUM">MEDIUM</option>
+              <option value="LOW">LOW</option>
+            </select>
+            <select id="filter-status" aria-label="Filtrar por estado">
+              <option value="">Todos os estados</option>
+              <option value="TODO">TODO</option>
+              <option value="IN_PROGRESS">IN_PROGRESS</option>
+              <option value="DONE">DONE</option>
+            </select>
+            <select id="filter-space" aria-label="Filtrar por espaço">
+              <option value="">Todos os espaços</option>
+            </select>
+          </div>
+
+          <div class="task-list" id="task-list">
+            <p class="empty">A carregar tarefas...</p>
+          </div>
+        </aside>
+      </main>
+    </div>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
